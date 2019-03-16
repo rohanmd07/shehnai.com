@@ -1,0 +1,27 @@
+{% extends 'shaadi/base.html' %}
+
+{% block title %}
+	Register
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'shaadi:detail' customer.id category.id dealer.id %}" method="post" class="needs-validation" novalidate>
+	{% csrf_token %}
+	<div>
+		<div class="col-md-3 mb-3">
+		    <label for="validationTooltip08"><strong>Starting Date</strong></label>
+		      	{{ form.start_date }}
+		</div>	    
+		<div class="col-md-3 mb-3">
+		    <label for="validationTooltip09"><strong>Ending Date</strong></label>
+		    {{ form.end_date }}
+		</div>
+		<div class="col-md-3 mb-3">
+		    <label for="validationTooltip010"><strong>Marriage Date</strong></label>
+		    {{ form.marriage_date }}
+		</div>	
+		<br>
+		<button class="btn btn-primary" type="submit">Pay</button>
+	</div>
+</form>
+{% endblock %}

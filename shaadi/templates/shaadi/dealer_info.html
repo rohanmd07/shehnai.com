@@ -1,0 +1,18 @@
+{% extends 'shaadi/base.html' %}
+
+{% block title %}
+	{{ dealer.company_name }}
+{% endblock %}
+
+{% block body %}
+	<div style="color: white">
+		<label>Company Name : </label>{{ dealer.company_name }}<br>
+		<label>Head Name : </label>{{ dealer.head_name }}<br>
+		<label>Category : </label>{{ dealer.category }}<br>
+		<label>Experience : </label>{{ dealer.exp }} Years<br>
+		<label>Stars : </label>{{ dealer.stars }}<br>
+	</div>
+	<form action="{% url 'shaadi:detail' customer.id category.id dealer.id %}">
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+{% endblock %}
